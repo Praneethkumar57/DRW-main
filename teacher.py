@@ -77,7 +77,7 @@ for epoch in range(args.epochs):
 
     if args.task == 'imdb':
         #metric = load_metric("accuracy")
-        metric = load("seqeval")
+        metric = load("accuracy")
         train_results = metric.compute(references=train_labels, predictions=train_pred)
         valid_results = metric.compute(references=valid_labels, predictions=valid_pred)
         train_acc = train_results['accuracy']
