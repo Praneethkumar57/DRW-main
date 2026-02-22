@@ -100,7 +100,7 @@ for epoch in range(args.epochs):
     elif args.task in GLUE_TASKS:
         actual_task = "mnli" if args.task == "mnli-mm" else args.task
         #metric = load_metric('glue', actual_task)
-        metric = load("seqeval")
+        metric = load("glue", actual_task)
         train_results = metric.compute(references=train_labels, predictions=train_pred)
         valid_results = metric.compute(references=valid_labels, predictions=valid_pred)
         train_acc = train_results['accuracy']
