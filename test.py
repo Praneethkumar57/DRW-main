@@ -3,9 +3,11 @@ import time
 import torch
 import numpy as np
 from tqdm import tqdm
-from datasets import load_metric
+#from datasets import load_metric
+from evaluate import load
 from transformers import AutoTokenizer, BertModel
-from transformers import AdamW, get_linear_schedule_with_warmup
+#from transformers import AdamW, get_linear_schedule_with_warmup
+from transformers import get_linear_schedule_with_warmup
 from model import BertClassifier, BertTokenClassifier
 from data import load_imdb_data, load_token_data, load_glue_data
 from wm import train_teacher, evaluate, train_student_soft, train_student_hard, softmax_signal_wm, teacher_hard_acc
